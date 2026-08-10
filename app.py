@@ -2,13 +2,14 @@ import streamlit as st
 from pathlib import Path
 from langchain_community.agent_toolkits.sql.base import create_sql_agent
 from langchain_community.callbacks.streamlit import StreamlitCallbackHandler
-from langchain.agents.agent_types import AgentType
-from langchain.agents.agent_toolkits import SQLDatabaseToolkit
+
+from langchain_community.agent_toolkits import SQLDatabaseToolkit
 from sqlalchemy import create_engine
 import sqlite3
 from langchain_groq import ChatGroq
 from urllib.parse import quote_plus
-from langchain.sql_database import SQLDatabase
+from langchain_community.utilities.sql_database import SQLDatabase
+
 import os
 from dotenv import load_dotenv
 
@@ -94,7 +95,7 @@ toolkit=SQLDatabaseToolkit(db=db,llm=model)
 agent=create_sql_agent(
     llm=model,
     toolkit=toolkit,
-    agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
+    agent_type="tool-calling",
     verbose=True)
 
 if "messages" not in st.session_state or st.sidebar.button("Clear Message History"):
