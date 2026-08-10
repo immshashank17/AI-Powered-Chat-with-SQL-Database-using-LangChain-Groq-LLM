@@ -28,7 +28,6 @@ st.title("LangChain: Chat with SQL Database")
 # GROQ API KEY
 # ==========================================
 
-st.subheader("🔐 Groq API Configuration")
 
 groq_api = st.secrets.get("GROQ_API_KEY", "")
 
