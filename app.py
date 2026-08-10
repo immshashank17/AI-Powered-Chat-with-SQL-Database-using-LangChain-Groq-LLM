@@ -29,10 +29,9 @@ st.subheader("🔐 Groq API Configuration")
 
 groq_api = st.text_input(
     "Enter your GROQ API Key",
-    type="password",
-    placeholder="gsk_..."
+    placeholder="gsk_...",
+    key="groq_api_key"
 )
-
 if not groq_api:
     st.info("Please provide your GROQ API Key to continue.")
     st.stop()
