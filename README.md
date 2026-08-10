@@ -1,0 +1,2 @@
+# AI-Powered-Chat-with-SQL-Database-using-LangChain-Groq-LLM
+An AI-powered conversational SQL assistant that allows users to interact with a SQL database using natural language. Instead of manually writing SQL queries, users can simply ask questions in plain English, and the application uses LangChain and Groq LLMs to understand the request, generate the appropriate SQL query, execute it against the database
