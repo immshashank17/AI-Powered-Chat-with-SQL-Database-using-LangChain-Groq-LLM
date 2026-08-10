@@ -26,14 +26,17 @@ st.title("LangChain: Chat with SQL Database")
 # ==============================
 
 st.subheader("🔐 Groq API Configuration")
+try:
+    groq_api = st.secrets["GROQ_API_KEY"]
+except:
+    groq_api = st.text_input(
+        "Enter your GROQ API Key",
+        placeholder="gsk_...",
+        key="groq_api_key"
+    )
 
-groq_api = st.text_input(
-    "Enter your GROQ API Key",
-    placeholder="gsk_...",
-    key="groq_api_key"
-)
 if not groq_api:
-    st.info("Please provide your GROQ API Key to continue.")
+    st.info("Please provide your GROQ API Key.")
     st.stop()
 
 
