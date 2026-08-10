@@ -1,0 +1,14 @@
+langchain
+python-dotenv
+ipykernel
+langchain-community
+langchain-openai
+langchain-huggingface
+chromadb
+langchain-groq
+faiss-cpu
+pypdf
+langchain-classic
+langchain-text-splitters
+langchain-chroma
+langchain-ollama
