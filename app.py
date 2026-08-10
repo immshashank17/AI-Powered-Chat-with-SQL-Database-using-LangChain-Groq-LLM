@@ -2,20 +2,41 @@ import streamlit as st
 from pathlib import Path
 from langchain_community.agent_toolkits.sql.base import create_sql_agent
 from langchain_community.callbacks.streamlit import StreamlitCallbackHandler
-
 from langchain_community.agent_toolkits import SQLDatabaseToolkit
 from sqlalchemy import create_engine
 import sqlite3
 from langchain_groq import ChatGroq
 from urllib.parse import quote_plus
 from langchain_community.utilities.sql_database import SQLDatabase
-
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
-st.title("Langchain: Chat with SQL Database")
+st.set_page_config(
+    page_title="LangChain SQL Chat",
+    page_icon="🤖",
+    layout="centered"
+)
+
+st.title("LangChain: Chat with SQL Database")
+
+# ==============================
+# GROQ API KEY
+# ==============================
+
+st.subheader("🔐 Groq API Configuration")
+
+groq_api = st.text_input(
+    "Enter your GROQ API Key",
+    type="password",
+    placeholder="gsk_..."
+)
+
+if not groq_api:
+    st.info("Please provide your GROQ API Key to continue.")
+    st.stop()
+
 
 LOCALDB = "USE_LOCALDB"
 MYSQLDB = "USE_MYSQL"
