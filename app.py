@@ -26,11 +26,7 @@ st.title("LangChain: Chat with SQL Database")
 # ==============================
 
 st.subheader("🔐 Groq API Configuration")
-try:
-    groq_api = st.secrets["GROQ_API_KEY"]
-except Exception:
-    st.error("GROQ_API_KEY is not configured in Streamlit Secrets.")
-    st.stop()
+groq_api = st.secrets["GROQ_API_KEY"]
 LOCALDB = "USE_LOCALDB"
 MYSQLDB = "USE_MYSQL"
 
