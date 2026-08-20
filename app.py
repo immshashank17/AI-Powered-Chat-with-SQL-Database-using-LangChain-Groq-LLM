@@ -88,11 +88,10 @@ else:
 # ==========================================
 
 model = ChatGroq(
-    model_name="llama-3.3-70b-versatile",
+    model_name="llama-3.1-8b-instant",
     groq_api_key=groq_api,
     streaming=True
 )
-
 # ==========================================
 # DATABASE CONFIGURATION
 # ==========================================
