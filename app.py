@@ -88,7 +88,7 @@ else:
 # ==========================================
 
 model = ChatGroq(
-    model_name="llama-3.1-8b-instant",
+    model_name="meta-llama/Llama-3.3-70B-Instruct",
     groq_api_key=groq_api,
     streaming=True
 )
